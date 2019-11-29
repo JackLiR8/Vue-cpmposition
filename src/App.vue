@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <basic-demo />
+    <mouse-position />
   </div>
 </template>
 
 <script>
 import BasicDemo from '@/components/BasicDemo'
+import MousePosition from "@/components/MousePosition";
 export default {
   name: 'app',
   components: {
-    BasicDemo
+    BasicDemo,
+    MousePosition
   }
 }
 </script>
