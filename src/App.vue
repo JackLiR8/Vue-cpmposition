@@ -2,17 +2,20 @@
   <div id="app">
     <basic-demo />
     <mouse-position />
+    <api-practice />
   </div>
 </template>
 
 <script>
 import BasicDemo from '@/components/BasicDemo'
-import MousePosition from "@/components/MousePosition";
+import MousePosition from '@/components/MousePosition'
+import ApiPractice from '@/views/ApiPractice'
 export default {
   name: 'app',
   components: {
     BasicDemo,
-    MousePosition
+    MousePosition,
+    ApiPractice
   }
 }
 </script>
