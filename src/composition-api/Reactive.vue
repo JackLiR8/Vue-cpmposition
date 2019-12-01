@@ -18,7 +18,7 @@ export default {
       }, 1000);
 
       setTimeout(() => {
-        clearTimeout(timer);
+        clearInterval(timer);
       }, 9001);
     })
 
