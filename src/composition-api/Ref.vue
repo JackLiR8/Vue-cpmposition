@@ -14,7 +14,7 @@ export default {
       2. 在template中获取setup 返回的ref，无需通过.value取值， 返回的ref会自动unwrap */
     const count = ref(0);
 
-    // 如果传给ref的是一个对象，reavtive会将该对象变成可响应的
+    // 如果传给ref的是一个对象，reactive会将该对象变成可响应的
     const obj = ref({foo: 1, bar: 2});
 
     // 如果ref被当作reactive对象的属性，那么ref也会自动unwrap
