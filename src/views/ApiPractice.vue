@@ -5,6 +5,7 @@
     <api-setup :position-x="x"/>
     <reactive />
     <ref />
+    <to-refs />
   </div>
 </template>
 
@@ -12,12 +13,14 @@
 import ApiSetup from '@/composition-api/Setup'
 import Reactive from '@/composition-api/Reactive'
 import Ref from '@/composition-api/Ref'
+import ToRefs from '@/composition-api/ToRefs'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
     ApiSetup,
     Reactive,
-    Ref
+    Ref,
+    ToRefs,
   },
   setup() {
     const {x} = useMousePosition();
