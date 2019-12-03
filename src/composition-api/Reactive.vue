@@ -14,12 +14,12 @@ export default {
 
     onMounted(() => {
       const timer = setInterval(() => {
+        if (state.count > 6) {
+          clearInterval(timer);
+          return;
+        }
         state.count++;
       }, 1000);
-
-      setTimeout(() => {
-        clearInterval(timer);
-      }, 9001);
     })
 
     return { state };

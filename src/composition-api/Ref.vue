@@ -40,20 +40,16 @@ export default {
 
     function changeObj(obj) {
       const timer = setInterval(() => {
+        if (obj.value.foo > 9) {
+          clearInterval(timer);
+          return;
+        }
         obj.value.foo++;
         obj.value.bar++;
       }, 1000);
-
-      setTimeout(() => {
-        clearInterval(timer);
-      }, 7001);
     }
 
     return { count, obj, state };
   }
 }
 </script>
-
-<style>
-
-</style>
