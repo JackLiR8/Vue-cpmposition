@@ -6,6 +6,7 @@
     <reactive />
     <ref />
     <to-refs />
+    <computed />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import ApiSetup from '@/composition-api/Setup'
 import Reactive from '@/composition-api/Reactive'
 import Ref from '@/composition-api/Ref'
 import ToRefs from '@/composition-api/ToRefs'
+import Computed from '@/composition-api/Computed'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
@@ -21,6 +23,7 @@ export default {
     Reactive,
     Ref,
     ToRefs,
+    Computed,
   },
   setup() {
     const {x} = useMousePosition();
