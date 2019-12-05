@@ -9,7 +9,7 @@
 import {reactive, onMounted, toRefs} from '@vue/composition-api'
 
 /**
- * toRefs 把一个reactive对象转换成一个plain对象，该对象的所有属性都是一个指向原对象相关值的ref,
+ * toRefs 把一个reactive对象转换成一个普通的对象，该对象的所有属性都是一个指向原对象相关值的ref,
  * 这样就可以对返回的对象进行解构/扩展而不会使数据失去响应性
  */
 function useToRefs() {

@@ -7,6 +7,8 @@
     <ref />
     <to-refs />
     <computed />
+    <!-- <readonly /> -->
+    <watch />
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import Reactive from '@/composition-api/Reactive'
 import Ref from '@/composition-api/Ref'
 import ToRefs from '@/composition-api/ToRefs'
 import Computed from '@/composition-api/Computed'
+// import Readonly from '@/composition-api/Readonly'
+import Watch from '@/composition-api/Watch'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
@@ -24,6 +28,8 @@ export default {
     Ref,
     ToRefs,
     Computed,
+    // Readonly,
+    Watch,
   },
   setup() {
     const {x} = useMousePosition();
