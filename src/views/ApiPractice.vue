@@ -9,6 +9,7 @@
     <computed />
     <!-- <readonly /> -->
     <watch />
+    <lifecycle-hooks />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import ToRefs from '@/composition-api/ToRefs'
 import Computed from '@/composition-api/Computed'
 // import Readonly from '@/composition-api/Readonly'
 import Watch from '@/composition-api/Watch'
+import LifecycleHooks from '@/composition-api/LifecycleHooks'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
@@ -30,6 +32,7 @@ export default {
     Computed,
     // Readonly,
     Watch,
+    LifecycleHooks
   },
   setup() {
     const {x} = useMousePosition();

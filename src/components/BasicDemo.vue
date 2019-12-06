@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {reactive, computed, watch, ref, onMounted} from '@vue/composition-api';
+import {reactive, computed, watch, ref} from '@vue/composition-api';
 export default {
   setup() {
     const state = reactive({
@@ -26,10 +26,6 @@ export default {
     watch(() => {
       document.querySelector('.watch-display').innerHTML = `count is ${state.count}`
     })
-
-    onMounted(() => {
-      console.log('component is mounted!')
-    }) 
 
     function increment() {
       state.count++;
