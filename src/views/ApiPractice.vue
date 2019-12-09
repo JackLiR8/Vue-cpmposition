@@ -11,6 +11,7 @@
     <watch />
     <lifecycle-hooks />
     <template-refs />
+    <create-component foo="hello" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import Computed from '@/composition-api/Computed'
 import Watch from '@/composition-api/Watch'
 import LifecycleHooks from '@/composition-api/LifecycleHooks'
 import TemplateRefs from '@/composition-api/TemplateRefs'
+import CreateComponent from '@/composition-api/CreateComponent'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
@@ -35,7 +37,8 @@ export default {
     // Readonly,
     Watch,
     LifecycleHooks,
-    TemplateRefs
+    TemplateRefs,
+    CreateComponent
   },
   setup() {
     const {x} = useMousePosition();
