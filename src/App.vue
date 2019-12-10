@@ -3,6 +3,7 @@
     <basic-demo />
     <mouse-position />
     <api-practice />
+    <demo-display />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import BasicDemo from '@/components/BasicDemo'
 import MousePosition from '@/components/MousePosition'
 import ApiPractice from '@/views/ApiPractice'
+import DemoDisplay from '@/views/DemoDisplay'
 export default {
   name: 'app',
   components: {
     BasicDemo,
     MousePosition,
-    ApiPractice
+    ApiPractice,
+    DemoDisplay
   }
 }
 </script>
