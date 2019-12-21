@@ -4,6 +4,7 @@
     <mouse-position />
     <api-practice />
     <demo-display />
+    <infinite-scroll />
   </div>
 </template>
 
@@ -12,13 +13,15 @@ import BasicDemo from '@/components/BasicDemo'
 import MousePosition from '@/components/MousePosition'
 import ApiPractice from '@/views/ApiPractice'
 import DemoDisplay from '@/views/DemoDisplay'
+import InfiniteScroll from '@/views/InfiniteScroll'
 export default {
   name: 'app',
   components: {
     BasicDemo,
     MousePosition,
     ApiPractice,
-    DemoDisplay
+    DemoDisplay,
+    InfiniteScroll
   }
 }
 </script>
