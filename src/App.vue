@@ -1,28 +1,14 @@
 <template>
   <div id="app">
-    <basic-demo />
-    <mouse-position />
-    <api-practice />
-    <demo-display />
-    <infinite-scroll />
+    <!-- <keep-alive> -->
+      <router-view></router-view>
+    <!-- </keep-alive> -->
   </div>
 </template>
 
 <script>
-import BasicDemo from '@/components/BasicDemo'
-import MousePosition from '@/components/MousePosition'
-import ApiPractice from '@/views/ApiPractice'
-import DemoDisplay from '@/views/DemoDisplay'
-import InfiniteScroll from '@/views/InfiniteScroll'
 export default {
   name: 'app',
-  components: {
-    BasicDemo,
-    MousePosition,
-    ApiPractice,
-    DemoDisplay,
-    InfiniteScroll
-  }
 }
 </script>
 

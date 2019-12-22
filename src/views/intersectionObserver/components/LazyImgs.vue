@@ -1,13 +1,18 @@
 <template>
   <div>
-    <hr>
-    <h2>lazy-loading img</h2>
-    <img-lazy
-      v-for="(link, i) in imgs" 
-      :key="i"
-      :src="link"
-      :width="600"
-      :height="600" />
+    <fieldset>
+      <legend>
+        <h2>lazy-loading img</h2>
+      </legend>
+      <div class="img-box">
+        <img-lazy
+          v-for="(link, i) in imgs" 
+          :key="i"
+          :src="link"
+          :width="200"
+          :height="200" />
+      </div>
+    </fieldset>
   </div>
 </template>
 
@@ -33,5 +38,18 @@ export default {
 </script>
 
 <style>
-
+.img-box {
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  border: 4px solid lightgoldenrodyellow;
+  overflow-y: scroll;
+  text-align: center;
+}
+img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  margin: 20px 0;
+}
 </style>
