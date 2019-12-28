@@ -1,20 +1,21 @@
 <template>
-  <div class="observer" ref="mark"></div>
+  <div class="target" ref="target"></div>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from '@vue/composition-api'
+import { ref, onMounted, onBeforeUnmount } from '@vue/composition-api'
 export default {
   props: {
-    handleIntersect: Function
+    handleIntersect: Function,
+    rootSelector: String
   },
   setup(props) {
-    const { handleIntersect } = props;
+    const { handleIntersect, rootSelector } = props;
     let observer = null
-    const mark = ref(null)
+    const target = ref(null)
     onMounted(() => {
       const options = {
-        root: document.querySelector('.infinite-scroll-box'),
+        root: document.querySelector(rootSelector),
         rootMargin: "200px 0px"
       }
       observer = new IntersectionObserver(([entry]) => {
@@ -23,22 +24,22 @@ export default {
         }
       }, options)
 
-      observer.observe(mark.value)
+      observer.observe(target.value)
     })
 
-    onUnmounted(() => {
+    onBeforeUnmount(() => {
       observer.disconnect()
     })
 
     return {
-      mark
+      target
     }
   }
 }
 </script>
 
 <style>
-.observer {
+.target {
   width: 100%;
   height: 50px;
   background: transparent;

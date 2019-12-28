@@ -6,7 +6,9 @@
           <li v-for="item in items" :key="item.id">
             {{item.name}}
           </li>
-          <Observer :handle-intersect="getData" />
+          <Observer 
+            :handle-intersect="getData"
+            root-selector=".infinite-scroll-box" />
         </ol>
     </fieldset>
   </div>
@@ -21,12 +23,12 @@ export default {
   },
   setup() {
     let items = ref([])
-    let page = ref(1)
+    let page = 1
     async function getData() {
       const res = await fetch(
-        `https://jsonplaceholder.typicode.com/comments?_page=${page.value}&_limit=40`
+        `https://jsonplaceholder.typicode.com/comments?_page=${page}&_limit=40`
       )
-      page.value++
+      page++
       const newItems = await res.json()
       if (newItems) {
         items.value = [...items.value, ...newItems]
