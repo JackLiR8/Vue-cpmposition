@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {reactive, computed, watch, ref} from '@vue/composition-api';
+import {reactive, computed, watchEffect, ref} from '@vue/composition-api';
 export default {
   setup() {
     const state = reactive({
@@ -23,7 +23,7 @@ export default {
       double: computed(() => state.count * 2)
     })
 
-    watch(() => {
+    watchEffect(() => {
       document.querySelector('.watch-display').innerHTML = `count is ${state.count}`
     })
 

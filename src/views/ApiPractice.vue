@@ -9,6 +9,7 @@
     <computed />
     <!-- <readonly /> -->
     <watch />
+    <watch-effect />
     <lifecycle-hooks />
     <template-refs />
     <define-component foo="hello" />
@@ -23,6 +24,7 @@ import ToRefs from '@/composition-api/ToRefs'
 import Computed from '@/composition-api/Computed'
 // import Readonly from '@/composition-api/Readonly'
 import Watch from '@/composition-api/Watch'
+import WatchEffect from '@/composition-api/WatchEffect'
 import LifecycleHooks from '@/composition-api/LifecycleHooks'
 import TemplateRefs from '@/composition-api/TemplateRefs'
 import DefineComponent from '@/composition-api/DefineComponent'
@@ -36,6 +38,7 @@ export default {
     Computed,
     // Readonly,
     Watch,
+    WatchEffect,
     LifecycleHooks,
     TemplateRefs,
     DefineComponent

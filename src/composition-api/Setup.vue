@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref, watch } from '@vue/composition-api'
+import { ref, watchEffect } from '@vue/composition-api'
 export default {
   props: {
     positionX: Number
@@ -25,7 +25,7 @@ export default {
     const x = ref(0);
     console.log('setup arg2 - context', context);
 
-    watch(() => {
+    watchEffect(() => {
       x.value = props.positionX;
     });
 
