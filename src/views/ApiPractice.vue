@@ -13,6 +13,9 @@
     <lifecycle-hooks />
     <template-refs />
     <define-component foo="hello" />
+    <fieldset>
+      <legend>Advanced Reactivity APIs</legend>
+    </fieldset>
   </div>
 </template>
 
@@ -28,6 +31,8 @@ import WatchEffect from '@/composition-api/WatchEffect'
 import LifecycleHooks from '@/composition-api/LifecycleHooks'
 import TemplateRefs from '@/composition-api/TemplateRefs'
 import DefineComponent from '@/composition-api/DefineComponent'
+
+// import CustomRef from '@/composition-api/advanced-reactivity/CustomRef'
 import {useMousePosition} from '@/utils/mouse'
 export default {
   components: {
@@ -41,7 +46,9 @@ export default {
     WatchEffect,
     LifecycleHooks,
     TemplateRefs,
-    DefineComponent
+    DefineComponent,
+
+    // CustomRef
   },
   setup() {
     const {x} = useMousePosition();
