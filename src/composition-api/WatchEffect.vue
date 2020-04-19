@@ -14,7 +14,7 @@
   watchEffect
   追踪到依赖时立即执行回调函数，且在依赖更新时重新执行回调函数
 */
-import { ref, watchEffect } from '@vue/composition-api'
+import { ref, watchEffect, onMounted } from '@vue/composition-api'
 export default {
   setup() {
     const count = ref(0)
@@ -45,6 +45,47 @@ export default {
         // invalidate previously pending async operation
       })
     })
+
+    // 3.Effect Flush Timing
+    //   用户的effect总在所有组件更新完毕后执行
+    //   第一次执行在组件挂载之前，若需要在回调中获取DOM或者 template refs
+    //   需要放在 onMounted 钩子里 
+    onMounted(() => {
+      watchEffect(() => {
+        // access the DOM or template refs
+      })
+    })
+
+    // 为防止 watcher effect 需要同步执行或者在组件更新之前执行，可配置 flush
+    watchEffect(
+      () => { /* ... */ },
+      { flush: 'sync' }   // 同步触发
+    )
+
+    watchEffect(
+      () => { /* ... */ },
+      { flush: 'pre' }    // 组件更新之前触发
+    )
+
+    // 4.Watcher Debugging
+    //   onTrack 和 onTrigger 可用于调试watcher， 只在开发模式下工作
+    //   onTrack 在响应属性或 ref 被追踪为依赖的时候调用
+    //   onTrigger 会在 watcher 回调函数被依赖变动触发时调用
+    watchEffect(
+      () => { /* console.log(count.value) */},
+      {
+        onTrack(e) {
+          console.log('== e ==', e)
+          // eslint-disable-next-line
+          debugger
+        },
+        onTrigger(e) {
+          console.log('== e ==', e)
+          // eslint-disable-next-line
+          debugger
+        }
+      }
+    )
 
     return { count, increase, stop }
   }
