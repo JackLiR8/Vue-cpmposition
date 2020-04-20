@@ -16,7 +16,7 @@ import { isReactive } from '@vue/composition-api/dist/reactivity'
 
 // =================== customRef ===========================
 // customRef 用于显示地控制依赖的 tracking 和 update triggering
-// customReg需要一个工厂函数，该函数接受 track, trigger 两个参数并且需要返回
+// customRef需要一个工厂函数，该函数接受 track, trigger 两个参数并且需要返回
 // 一个包含 get 和 set 的对象
 export function useDebounceRef(value, delay = 200) {
   let timeout
